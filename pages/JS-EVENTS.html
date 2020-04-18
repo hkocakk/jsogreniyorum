@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: black;">
+    <a style="color:brown; background-color: black;" href="file:///C:/PerfLogs/xampp/htdocs/js/JS-HOME.html" >JavaScript Home</a> 
+    <ul style="color: white;">
+        <h2>JavaScript - Events</h2><br>
+        <p id="event"></p>
+        <script>
+        document.getElementById("event").innerHTML = "HTML events are "things" that happen to HTML elements."; <br>
+        document.getElementById("event").innerHTML = "When JavaScript is used in HTML pages, JavaScript can "react" on these events."; <br>
+        </script>
+        <h3>HTML Events </h3><br>
+        <p id="event1"></p>
+        <script>
+        document.getElementById("event1").innerHTML = "An HTML event can be something the browser does, or something a user does."; <br>
+        document.getElementById("event1").innerHTML = "Here are some examples of HTML events:"; <br>
+        </script>
+        <li>An HTML web page has finished loading</li><br>
+            <li>An HTML input field was changed</li><br>
+                <li>An HTML button was clicked</li><br>
+                <p id="event2"></p>
+                <script>
+                document.getElementById("event2").innerHTML = "Often, when events happen, you may want to do something."; <br>
+                document.getElementById("event2").innerHTML = "JavaScript lets you execute code when events are detected."; <br>
+                document.getElementById("event2").innerHTML = "HTML allows event handler attributes, with JavaScript code, to be added to HTML elements."; <br> 
+                document.getElementById("event2").innerHTML = "With single quotes:"; <br>
+                </script>
+                <a style="background-color:rosybrown;"> < element event='some JavaScript'> </a><br>
+                With double quotes: <br>
+                <a style="background-color:rosybrown;"> < element event="some JavaScript"></a><br>
+                In the following example, an onclick attribute (with code), is added to a < button > element:<br>
+                <a style="background-color:rosybrown;"> < button onclick=" document.getElementById('demo').innerHTML =  Date ()" >The time is? < / button >  </a><br>
+                 In the example above, the JavaScript code changes the content of the element with id="demo". <br>
+                In the next example, the code changes the content of its own element (using this.innerHTML):  <br>
+                <a style="background-color:rosybrown;"> < button onclick="this.innerHTML = Date()">The time is?< / button > </a><br><br>
+                <a style="color: orange;">***JavaScript code is often several lines long. It is more common to see event attributes calling functions:*** </a><br><br>
+                Example: <br>
+                <a style="background-color:rosybrown;"> < button onclick="displayDate()">The time is? < / button > </a><br>
+    </ul>
+</body>
+</html>

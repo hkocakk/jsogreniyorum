@@ -1,0 +1,82 @@
+<html>
+    <body style="align-items: center;">
+        <form name="form" method="POST" onsubmit="return kontrol()" ><br><br>
+        Ad-Soyad:
+        <input type="text" name="ad" id="ad" required> <br> <br>
+        TC Kimlik:
+        <input type="number" name="tc" id="tc" required> <br><br>
+        E-Mail:
+        <input type="text" name="mail" id="mail" required> <br><br>
+        Adres:
+        <input type="text" name="adres" id="adres"required> <br><br>
+        Cinsiyet:
+        <input type="radio" name="cins" id="cins" value="erkek" required> Erkek 
+        <input type="radio" name="cins" id="cins" value="bayan" required> Bayan
+
+        <br><br>
+        <input type="submit" value="submit" >
+        <input type="button" value="reset" >  
+        </form>
+    </body>
+
+<script>
+    function kontrol(){
+        var ad= documents.getElementById("ad").value;
+        var tc= documents.getElementById("tc").value;
+        var mail= documents.getElementById("mail").value;
+        var adres= documents.getElementById("adres").value;
+        var cins= documents.getElementById("cins").value;
+
+        var ad = document.forms["form"]["ad"].value;
+            if (ad == null || ad == "") {
+                alert("İsminizi girmediniz!");
+                return false;
+            }
+
+        atpos=mail.indexOf("@");
+        dotpos=mail.lastIndexOf(".");
+
+        if(ad==" " || tc==" " || mail==" " || adres==" " || cins==" " ){
+            alert("lütfen boş alan bırakmayın!");
+            return false;
+        }
+        else if(atpos<1 || dotpos<atpos+2 || dotpos+2>=mail.length){
+            alert("Hatalı mail!");
+            return false;
+        }
+        else if(tcKontrol(tcno)){
+            return true;
+        }
+        else{
+            alert("Hatalı tc!");
+            return false;
+        }
+        
+    function tcKontrol(tcno){
+        var tek=0;
+            cift=0;
+            sonuc=0;
+            i=0;
+            tcToplam=0;
+        
+        if(tcno.length!=11) return false;
+        if(isNaN(tcno)) return false;
+        if(tcno[0]==0) return false;
+
+        tek=parseInt[0]+parseInt[2]+parseInt[4]+parseInt[6]+parseInt[8];
+        cift=parseInt[1]+parseInt[3]+parseInt[5]+parseInt[7];
+
+        tek=tek*7;
+        sonuc=Math.abs(tek-cift);
+        if(sonuc%10!=tcno[9]) return false;
+        
+        for(i=0; i<10; i++){
+            tcToplam+=parseInt(tcno[i]);
+        }
+
+        if(tcToplam%10!=tcno[10])return false;
+        return true;
+    }
+    }
+</script>
+</html>

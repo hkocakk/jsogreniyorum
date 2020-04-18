@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color: black;">
+    <a style="color:brown; background-color: black;" href="file:///C:/PerfLogs/xampp/htdocs/js/JS-HOME.html" >JavaScript Home</a> 
+    <ul style="color: white;">
+        <h2>JavaScript - Functions</h2><br>
+        A JavaScript function is a block of code designed to perform a particular task.<br>
+        A JavaScript function is executed when "something" invokes it (calls it). <br>
+        <li>function myFunction(p1, p2) {
+            return p1 * p2;   // The function returns the product of p1 and p2
+            } </li><br>
+        <h3>JavaScript Function Syntax</h3>
+        <p id="func"></p>
+        <script>
+        document.getElementById("func").innerHTML = "A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ()."; <br>
+        document.getElementById("func").innerHTML = "Function names can contain letters, digits, underscores, and dollar signs (same rules as variables)."; <br>
+        document.getElementById("func").innerHTML = "The parentheses may include parameter names separated by commas:"; <br>
+        document.getElementById("func").innerHTML = "(parameter1, parameter2, ...)"; <br>
+        document.getElementById("func").innerHTML = "The code to be executed, by the function, is placed inside curly brackets: {}"; <br>
+        </script>
+        Example: <br>
+        <li>function name(parameter1, parameter2, parameter3) {
+            // code to be executed
+            }</li><br>
+            Function parameters are listed inside the parentheses () in the function definition.<br>
+            Function arguments are the values received by the function when it is invoked.<br>            
+            Inside the function, the arguments (the parameters) behave as local variables.<br><br>
+        <a style="color: orange;">***A Function is much the same as a Procedure or a Subroutine, in other programming languages.*** </a><br><br>
+    </ul>
+
+    <ul style="color: white;" >
+        <h3>Function Invocation</h3><br>
+        The code inside the function will execute when "something" invokes (calls) the function:<br>
+        <li > When an event occurs (when a user clicks a button)</li><br>
+            <li> When it is invoked (called) from JavaScript code </li><br>
+                <li> Automatically (self invoked)</li><br>
+        You will learn a lot more about function invocation later in this tutorial.<br><br>                             
+    </ul>  
+
+    <ul style="color: white;" >
+        <h3>Function Return</h3><br>
+        When JavaScript reaches a return statement, the function will stop executing.<br>
+        If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking statement.<br>
+        Functions often compute a return value. The return value is "returned" back to the "caller":<br><br>
+        Example: <br>
+        Calculate the product of two numbers, and return the result:<br>
+        <li>var x = myFunction(4, 3);   // Function is called, return value will end up in x<br>
+            function myFunction(a, b) { <br>
+              return a * b;             // Function returns the product of a and b <br>
+            }</li> <br>
+        The result in x will be:
+        <a style="color: red;">12</a> <br><br>                           
+    </ul>     
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="background-image: url('sepet2.jpg'); background-repeat: no-repeat; background-position:center;  " >
+    <br><br>
+<div style="text-align: center;" ng-app="alisverisListesi" ng-controller="myCtrl" ng-cloak ng-controller="myCtrl" class="w3-card-2 w3-margin"
+     style="width:40px; height: 30px; ">
+    <header>
+        <h2 style="text-align: center;">Alış Veriş Listesi</h2>
+        <br><br><br>
+        <h3 style="text-align: center;">Bugün Alınacaklar</h3>
+    </header>
+    <div class="w3-container  w3-padding-16">
+        <div class="w3-row w3-margin-top">
+            <div class="w3-col s10">
+
+                <input ng-model="eklenecek" placeholder="ne alacaksın?" class="w3-input w3-border w3-padding"/>
+
+            </div>
+            <div class="w3-col s2 ">
+
+                <button ng-click="urunEkle()" class="w3-btn w3-padding ">Ekle</button>
+            </div>
+        </div>
+
+    <ul class="w3-ul">
+        <li ng-repeat="x in urunler" class="w3-padding-16">{{x}}
+
+            <span ng-click="urunKaldir($index)" style="cursor:pointer;" class="w3-right w3-margin-right">&times;</span>
+
+        </li>
+    </ul>
+
+    
+        <p class="w3-padding-left w3-text-red" >{{errortext}}</p>
+
+
+    </div>
+
+
+    <script>
+
+        var app = angular.module('alisverisListesi', []);
+        app.controller('myCtrl', function ($scope) {
+            $scope.urunler = ["ekmek", "peynir", "zeytin"];
+            $scope.urunEkle = function () {
+
+                $scope.errortext = "";
+                if (!$scope.eklenecek) {
+                    return;
+                }
+                if ($scope.urunler.indexOf($scope.eklenecek) == -1) {
+                    $scope.urunler.push($scope.eklenecek);
+                } else {
+                    $scope.errortext = "bu ürün zaten listende...";
+                }
+            };
+            $scope.urunKaldir = function (x) {
+                $scope.errortext = "";
+                $scope.urunler.splice(x, 1);
+            }
+
+        });
+
+
+    </script>
+
+</body>
+</html>
