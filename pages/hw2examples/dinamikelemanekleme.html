@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <style>
+            .kirmizi {
+                color:red;
+                background-color: yellow;
+            }
+        </style>
+
+        <script>
+            function degistir(){
+                var elementler=document.getElementsByTagName("h3");
+                var i=0;
+
+                for(;i<elementler.length;i++){
+                    var ozellik=document.createAttribute("class");
+                    ozellik.value="kirmizi";
+                    elementler[i].setAttributeNode(ozellik);
+
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <br><br>
+        <h3> Dinamik Eleman Ekleme:</h3>
+        <p style="background-color: tomato;"> " < style > <br>
+            .kirmizi { <br>
+                color:red; <br>
+                background-color: yellow; <br>
+            } <br>
+        < / style > <br>
+        <br>
+        < script > <br>
+            function degistir(){ <br>
+                var elementler=document.getElementsByTagName("h3"); <br>
+                var i=0; <br>
+                <br>
+                for(;i < elementler . length;i++ ){ <br>
+                    var ozellik=document.createAttribute("class"); <br>
+                    ozellik.value="kirmizi"; <br>
+                    elementler[i].setAttributeNode(ozellik); <br>
+                    
+                }<br>
+            }<br>
+        < / script > " <br>        
+        </p>
+        <p>kodumuzun head kisminda dinamik eleman ekleriz. Bu kodda anlatilmak istenen sudur: <br>
+            butona basildiginda h3 baslikli yazinin rengi dinamik eleman ekleme yontemiyle ekledigimiz uzere kirmiziya arkaplan rengi ise sariya donusur.<br>
+        </p>
+
+        <button onclick="degistir()">degistir</button>
+    </body>
+</html>
